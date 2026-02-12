@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gala Italia Palm Beach 2026 | All About Italy</title>
+  <meta name="description" content="The US debut of Gala Italia at the Norton Museum of Art, Palm Beach. March 24, 2026. An exclusive evening celebrating Italian excellence.">
+  <meta property="og:title" content="Gala Italia Palm Beach 2026">
+  <meta property="og:description" content="The US debut of Gala Italia. March 24, 2026 at the Norton Museum of Art, Palm Beach.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e2cc7e;
+      --dark: #0a0a0a;
+      --dark-card: #111111;
+      --cream: #f5f0e8;
+      --white: #ffffff;
+      --green: #008c45;
+      --red: #cd212a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--dark);
+      color: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* Italian flag accent bar */
+    .flag-bar {
+      height: 4px;
+      background: linear-gradient(to right, var(--green) 33.3%, var(--white) 33.3%, var(--white) 66.6%, var(--red) 66.6%);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 4px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      transition: background 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      transition: opacity 0.3s, color 0.3s;
+    }
+
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(201, 168, 76, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(201, 168, 76, 0.04) 0%, transparent 40%),
+        var(--dark);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.2s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 0.3em;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.4s forwards;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.6s forwards;
+    }
+
+    .hero-details {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.8s forwards;
+    }
+
+    .hero-detail {
+      text-align: center;
+    }
+
+    .hero-detail-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-detail-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--cream);
+    }
+
+    .hero-cta {
+      opacity: 0;
+      animation: fadeUp 1s ease 1s forwards;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 3rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-filled {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-filled:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem 0;
+    }
+
+    .divider-line {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+    }
+
+    .divider-icon {
+      color: var(--gold);
+      font-size: 0.7rem;
+      opacity: 0.6;
+    }
+
+    /* Sections */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    .section-text {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--cream);
+      opacity: 0.8;
+      max-width: 680px;
+    }
+
+    /* About section */
+    #about { background: var(--dark); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      aspect-ratio: 3/4;
+      background:
+        linear-gradient(135deg, rgba(201, 168, 76, 0.15) 0%, transparent 50%),
+        linear-gradient(225deg, rgba(201, 168, 76, 0.08) 0%, transparent 50%),
+        var(--dark-card);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.3;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    /* Program */
+    #program {
+      background: linear-gradient(180deg, var(--dark) 0%, #0d0d0d 100%);
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .program-card {
+      padding: 2.5rem 2rem;
+      border: 1px solid rgba(201, 168, 76, 0.12);
+      background: rgba(17, 17, 17, 0.6);
+      transition: border-color 0.4s, transform 0.4s;
+    }
+
+    .program-card:hover {
+      border-color: rgba(201, 168, 76, 0.35);
+      transform: translateY(-4px);
+    }
+
+    .program-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .program-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .program-card p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--cream);
+      opacity: 0.7;
+    }
+
+    /* Pillars */
+    #pillars {
+      background: var(--dark);
+    }
+
+    .pillars-row {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .pillar {
+      text-align: center;
+      flex: 0 0 auto;
+    }
+
+    .pillar-icon {
+      width: 72px;
+      height: 72px;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .pillar:hover .pillar-icon {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.08);
+    }
+
+    .pillar-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream);
+      opacity: 0.7;
+    }
+
+    /* Venue */
+    #venue {
+      background: linear-gradient(180deg, #0d0d0d 0%, var(--dark) 100%);
+    }
+
+    .venue-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .venue-map {
+      aspect-ratio: 4/3;
+      background: var(--dark-card);
+      border: 1px solid rgba(201, 168, 76, 0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .venue-map-pin { font-size: 2.5rem; }
+
+    .venue-map-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+      opacity: 0.6;
+    }
+
+    .venue-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .venue-info address {
+      font-style: normal;
+      font-size: 0.9rem;
+      color: var(--cream);
+      opacity: 0.6;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    /* Partners */
+    #partners {
+      background: var(--dark);
+      text-align: center;
+    }
+
+    .partners-grid {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .partner {
+      text-align: center;
+      max-width: 220px;
+    }
+
+    .partner-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .partner-desc {
+      font-size: 0.75rem;
+      color: var(--cream);
+      opacity: 0.5;
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 8rem 2rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 70%),
+        var(--dark);
+    }
+
+    .cta-section .section-title {
+      margin-bottom: 1rem;
+    }
+
+    .cta-section .section-text {
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(201, 168, 76, 0.1);
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .footer-text {
+      font-size: 0.7rem;
+      color: var(--cream);
+      opacity: 0.35;
+      letter-spacing: 0.1em;
+    }
+
+    .footer-text a {
+      color: var(--gold);
+      text-decoration: none;
+      opacity: 0.7;
+    }
+
+    .footer-text a:hover {
+      opacity: 1;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      margin: 6px 0;
+      transition: all 0.3s;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-grid,
+      .venue-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+      .program-grid { grid-template-columns: 1fr; }
+
+      .hero-details { gap: 2rem; }
+
+      .about-image { display: none; }
+    }
+
+    @media (max-width: 680px) {
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(10, 10, 10, 0.95);
+        padding: 2rem;
+        gap: 1.5rem;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+      }
+
+      .nav-links.open { display: flex; }
+
+      section { padding: 4rem 1.5rem; }
+
+      .pillars-row { gap: 2rem; }
+
+      .partners-grid { gap: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="flag-bar"></div>
+
+<nav>
+  <div class="nav-logo">Gala Italia</div>
+  <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#pillars">Made in Italy</a></li>
+    <li><a href="#venue">Venue</a></li>
+    <li><a href="#partners">Partners</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">The US Debut &mdash; All About Italy Presents</p>
+    <h1 class="hero-title">Gala <em>Italia</em></h1>
+    <p class="hero-subtitle">Palm Beach 2026</p>
+    <div class="hero-details">
+      <div class="hero-detail">
+        <div class="hero-detail-label">Date</div>
+        <div class="hero-detail-value">March 24, 2026</div>
+      </div>
+      <div class="hero-detail">
+        <div class="hero-detail-label">Venue</div>
+        <div class="hero-detail-value">Norton Museum of Art</div>
+      </div>
+      <div class="hero-detail">
+        <div class="hero-detail-label">Location</div>
+        <div class="hero-detail-value">Palm Beach, Florida</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#about" class="btn">Discover the Evening</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="fade-in">
+        <p class="section-label">The Event</p>
+        <h2 class="section-title">An Exclusive Evening Celebrating Italian Excellence</h2>
+        <p class="section-text">
+          For the first time, Gala Italia crosses the Atlantic to bring the finest of Italian culture, art, and lifestyle to one of America's most prestigious destinations. Organized by <strong>All About Italy</strong> &mdash; the international magazine promoting Italian excellence since 1997 &mdash; this landmark evening takes place on the eve of the Palm Beach International Boat Show.
+        </p>
+        <br>
+        <p class="section-text">
+          An evening where art meets music, where design meets gastronomy, and where the spirit of Made in Italy comes alive under the roof of one of Florida's most celebrated cultural institutions.
+        </p>
+      </div>
+      <div class="about-image fade-in">
+        <div class="about-image-text">La Dolce<br>Vita</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Program -->
+<section id="program">
+  <div class="section-inner">
+    <p class="section-label fade-in">The Program</p>
+    <h2 class="section-title fade-in">An Unforgettable Evening</h2>
+    <div class="program-grid">
+      <div class="program-card fade-in">
+        <span class="program-icon" aria-hidden="true">&#9835;</span>
+        <h3>Music</h3>
+        <p>A special collaboration with the Luciano Pavarotti Foundation brings world-class musical performances that honor Italy's extraordinary operatic heritage.</p>
+      </div>
+      <div class="program-card fade-in">
+        <span class="program-icon" aria-hidden="true">&#9733;</span>
+        <h3>Art &amp; Culture</h3>
+        <p>Hosted within the Norton Museum of Art, the evening unfolds amidst masterworks, blending Italian creativity with the museum's celebrated collection.</p>
+      </div>
+      <div class="program-card fade-in">
+        <span class="program-icon" aria-hidden="true">&#10047;</span>
+        <h3>Culinary Excellence</h3>
+        <p>A curated gastronomic experience by BiCE Restaurant &mdash; celebrating 100 years of Italian hospitality &mdash; brings authentic flavors to the heart of Palm Beach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pillars -->
+<section id="pillars">
+  <div class="section-inner" style="text-align: center;">
+    <p class="section-label fade-in">Made in Italy</p>
+    <h2 class="section-title fade-in" style="max-width: 600px; margin: 0 auto 1rem;">The Pillars of Italian Identity</h2>
+    <p class="section-text fade-in" style="margin: 0 auto;">
+      Gala Italia showcases the sectors that define Italian excellence on the world stage.
+    </p>
+    <div class="pillars-row">
+      <div class="pillar fade-in">
+        <div class="pillar-icon">&#9998;</div>
+        <div class="pillar-label">Design</div>
+      </div>
+      <div class="pillar fade-in">
+        <div class="pillar-icon">&#10022;</div>
+        <div class="pillar-label">Fashion</div>
+      </div>
+      <div class="pillar fade-in">
+        <div class="pillar-icon">&#9881;</div>
+        <div class="pillar-label">Automotive</div>
+      </div>
+      <div class="pillar fade-in">
+        <div class="pillar-icon">&#9875;</div>
+        <div class="pillar-label">Nautical</div>
+      </div>
+      <div class="pillar fade-in">
+        <div class="pillar-icon">&#127860;</div>
+        <div class="pillar-label">Food &amp; Wine</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Venue -->
+<section id="venue">
+  <div class="section-inner">
+    <div class="venue-grid">
+      <div class="fade-in">
+        <p class="section-label">The Venue</p>
+        <h2 class="section-title">Norton Museum of Art</h2>
+        <div class="venue-info">
+          <address>
+            1450 S Dixie Hwy<br>
+            West Palm Beach, FL 33401
+          </address>
+          <p class="section-text">
+            One of South Florida's premier cultural institutions, the Norton Museum of Art provides a stunning backdrop for an evening dedicated to the intersection of Italian and international art, culture, and design.
+          </p>
+        </div>
+      </div>
+      <div class="venue-map fade-in">
+        <div class="venue-map-pin">&#128205;</div>
+        <div class="venue-map-label">Palm Beach, Florida</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners -->
+<section id="partners">
+  <div class="section-inner">
+    <p class="section-label fade-in">Our Partners</p>
+    <h2 class="section-title fade-in" style="max-width: 600px; margin: 0 auto 1rem;">Collaborating for Excellence</h2>
+    <div class="partners-grid">
+      <div class="partner fade-in">
+        <div class="partner-name">Luciano Pavarotti Foundation</div>
+        <div class="partner-desc">Preserving and promoting the legacy of one of the greatest voices in music history.</div>
+      </div>
+      <div class="partner fade-in">
+        <div class="partner-name">BiCE Restaurant</div>
+        <div class="partner-desc">Celebrating 100 years of authentic Italian hospitality and culinary tradition.</div>
+      </div>
+      <div class="partner fade-in">
+        <div class="partner-name">All About Italy</div>
+        <div class="partner-desc">Promoting Italian culture internationally since 1997 through publishing, events, and experiences.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="divider" style="margin-bottom: 3rem;">
+      <div class="divider-line"></div>
+      <div class="divider-icon">&#10070;</div>
+      <div class="divider-line"></div>
+    </div>
+    <p class="section-label fade-in">March 24, 2026</p>
+    <h2 class="section-title fade-in">Join Us in Palm Beach</h2>
+    <p class="section-text fade-in" style="margin: 0 auto 3rem; text-align: center;">
+      Be part of the historic US debut of Gala Italia. An evening of art, music, cuisine, and the finest expressions of Made in Italy.
+    </p>
+    <a href="mailto:info@allaboutitaly.net" class="btn btn-filled fade-in">Request an Invitation</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-brand">Gala Italia &mdash; Palm Beach 2026</div>
+  <p class="footer-text">
+    Organized by <a href="https://allaboutitaly.net" target="_blank" rel="noopener">All About Italy</a> &bull; Norton Museum of Art, Palm Beach, FL
+  </p>
+</footer>
+
+<script>
+  // Scroll-triggered fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
