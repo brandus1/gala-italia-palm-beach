@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gala Italia Palm Beach 2026 | All About Italy</title>
-  <meta name="description" content="The US debut of Gala Italia at the Norton Museum of Art, Palm Beach. March 24, 2026. An exclusive evening celebrating Italian excellence.">
+  <meta name="description" content="The US debut of Gala Italia at the Norton Museum of Art, Palm Beach. March 24, 2026. An exclusive evening celebrating Italian excellence in art, music, and gastronomy.">
   <meta property="og:title" content="Gala Italia Palm Beach 2026">
   <meta property="og:description" content="The US debut of Gala Italia. March 24, 2026 at the Norton Museum of Art, Palm Beach.">
   <meta property="og:type" content="website">
@@ -96,24 +96,34 @@
       text-align: center;
       padding: 6rem 2rem 4rem;
       position: relative;
-      background:
-        radial-gradient(ellipse at 50% 30%, rgba(201, 168, 76, 0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 80%, rgba(201, 168, 76, 0.04) 0%, transparent 40%),
-        var(--dark);
+      overflow: hidden;
     }
 
-    .hero::before {
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('images/norton-exterior.jpg') center center / cover no-repeat;
+      filter: brightness(0.25);
+      z-index: 0;
+    }
+
+    .hero::after {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.5;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(201, 168, 76, 0.1) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.7) 100%);
+      z-index: 1;
     }
 
-    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
 
     .hero-eyebrow {
       font-size: 0.75rem;
@@ -289,27 +299,35 @@
 
     .about-image {
       aspect-ratio: 3/4;
-      background:
-        linear-gradient(135deg, rgba(201, 168, 76, 0.15) 0%, transparent 50%),
-        linear-gradient(225deg, rgba(201, 168, 76, 0.08) 0%, transparent 50%),
-        var(--dark-card);
+      background: url('images/norton-hallway.jpeg') center center / cover no-repeat;
       border: 1px solid rgba(201, 168, 76, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       overflow: hidden;
     }
 
-    .about-image-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--gold);
-      opacity: 0.3;
-      text-align: center;
-      line-height: 1.2;
+    /* Photo grid */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin: 4rem 0;
+    }
+
+    .photo-strip-item {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-strip-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .photo-strip-item:hover img {
+      transform: scale(1.05);
     }
 
     /* Program */
@@ -317,44 +335,94 @@
       background: linear-gradient(180deg, var(--dark) 0%, #0d0d0d 100%);
     }
 
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+    .timeline {
       margin-top: 3rem;
+      position: relative;
+      padding-left: 2rem;
     }
 
-    .program-card {
-      padding: 2.5rem 2rem;
-      border: 1px solid rgba(201, 168, 76, 0.12);
-      background: rgba(17, 17, 17, 0.6);
-      transition: border-color 0.4s, transform 0.4s;
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--gold), rgba(201, 168, 76, 0.1));
     }
 
-    .program-card:hover {
-      border-color: rgba(201, 168, 76, 0.35);
-      transform: translateY(-4px);
+    .timeline-item {
+      position: relative;
+      padding: 0 0 3rem 2.5rem;
     }
 
-    .program-icon {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      display: block;
+    .timeline-item:last-child {
+      padding-bottom: 0;
     }
 
-    .program-card h3 {
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.45rem;
+      top: 0.4rem;
+      width: 8px;
+      height: 8px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: var(--dark);
+    }
+
+    .timeline-time {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.4rem;
       font-weight: 500;
       color: var(--white);
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
-    .program-card p {
+    .timeline-desc {
       font-size: 0.85rem;
       line-height: 1.8;
       color: var(--cream);
       opacity: 0.7;
+      max-width: 550px;
+    }
+
+    /* Feature sections with images */
+    .feature-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .feature-section.reversed {
+      direction: rtl;
+    }
+
+    .feature-section.reversed > * {
+      direction: ltr;
+    }
+
+    .feature-image {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border: 1px solid rgba(201, 168, 76, 0.12);
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* Pillars */
@@ -414,24 +482,16 @@
       align-items: center;
     }
 
-    .venue-map {
+    .venue-image {
       aspect-ratio: 4/3;
-      background: var(--dark-card);
+      overflow: hidden;
       border: 1px solid rgba(201, 168, 76, 0.12);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
     }
 
-    .venue-map-pin { font-size: 2.5rem; }
-
-    .venue-map-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      color: var(--cream);
-      opacity: 0.6;
+    .venue-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .venue-info h3 {
@@ -467,7 +527,7 @@
 
     .partner {
       text-align: center;
-      max-width: 220px;
+      max-width: 280px;
     }
 
     .partner-name {
@@ -575,9 +635,11 @@
     /* Responsive */
     @media (max-width: 900px) {
       .about-grid,
-      .venue-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .venue-grid,
+      .feature-section,
+      .feature-section.reversed { grid-template-columns: 1fr; gap: 2rem; direction: ltr; }
 
-      .program-grid { grid-template-columns: 1fr; }
+      .photo-strip { grid-template-columns: 1fr; }
 
       .hero-details { gap: 2rem; }
 
@@ -623,22 +685,23 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#program">Program</a></li>
-    <li><a href="#pillars">Made in Italy</a></li>
+    <li><a href="#pavarotti">Pavarotti</a></li>
+    <li><a href="#dining">Dining</a></li>
     <li><a href="#venue">Venue</a></li>
-    <li><a href="#partners">Partners</a></li>
   </ul>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">The US Debut &mdash; All About Italy Presents</p>
+    <p class="hero-eyebrow">All About Italy Presents</p>
     <h1 class="hero-title">Gala <em>Italia</em></h1>
     <p class="hero-subtitle">Palm Beach 2026</p>
     <div class="hero-details">
       <div class="hero-detail">
         <div class="hero-detail-label">Date</div>
-        <div class="hero-detail-value">March 24, 2026</div>
+        <div class="hero-detail-value">Tuesday, March 24, 2026</div>
       </div>
       <div class="hero-detail">
         <div class="hero-detail-label">Venue</div>
@@ -646,7 +709,7 @@
       </div>
       <div class="hero-detail">
         <div class="hero-detail-label">Location</div>
-        <div class="hero-detail-value">Palm Beach, Florida</div>
+        <div class="hero-detail-value">West Palm Beach, Florida</div>
       </div>
     </div>
     <div class="hero-cta">
@@ -661,75 +724,140 @@
     <div class="about-grid">
       <div class="fade-in">
         <p class="section-label">The Event</p>
-        <h2 class="section-title">An Exclusive Evening Celebrating Italian Excellence</h2>
+        <h2 class="section-title">An Evening of Art, Culture, and Italian Lifestyle</h2>
         <p class="section-text">
-          For the first time, Gala Italia crosses the Atlantic to bring the finest of Italian culture, art, and lifestyle to one of America's most prestigious destinations. Organized by <strong>All About Italy</strong> &mdash; the international magazine promoting Italian excellence since 1997 &mdash; this landmark evening takes place on the eve of the Palm Beach International Boat Show.
+          Since 1997, <strong>All About Italy</strong> has served as an ambassador of Italian excellence worldwide, celebrating the authenticity of Made in Italy through prestigious events and international publications.
         </p>
         <br>
         <p class="section-text">
-          An evening where art meets music, where design meets gastronomy, and where the spirit of Made in Italy comes alive under the roof of one of Florida's most celebrated cultural institutions.
+          The Gala Italia offers a full-immersion experience that blends the elegance of Italian tradition with the contemporary energy of the industries that best represent Italy &mdash; hosted in a unique and prestigious setting: the <strong>Norton Museum of Art</strong> in Palm Beach, on the eve of the official opening of the <strong>Palm Beach International Boat Show</strong>.
         </p>
       </div>
-      <div class="about-image fade-in">
-        <div class="about-image-text">La Dolce<br>Vita</div>
-      </div>
+      <div class="about-image fade-in"></div>
     </div>
   </div>
 </section>
+
+<!-- Photo Strip -->
+<div class="photo-strip">
+  <div class="photo-strip-item">
+    <img src="images/norton-gallery.jpeg" alt="Norton Museum gallery" loading="lazy">
+  </div>
+  <div class="photo-strip-item">
+    <img src="images/norton-theater.jpeg" alt="Norton Museum theater" loading="lazy">
+  </div>
+  <div class="photo-strip-item">
+    <img src="images/norton-event-space.jpeg" alt="Norton Museum event space" loading="lazy">
+  </div>
+</div>
 
 <!-- Program -->
 <section id="program">
   <div class="section-inner">
     <p class="section-label fade-in">The Program</p>
     <h2 class="section-title fade-in">An Unforgettable Evening</h2>
-    <div class="program-grid">
-      <div class="program-card fade-in">
-        <span class="program-icon" aria-hidden="true">&#9835;</span>
-        <h3>Music</h3>
-        <p>A special collaboration with the Luciano Pavarotti Foundation brings world-class musical performances that honor Italy's extraordinary operatic heritage.</p>
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <div class="timeline-time">6:00 PM</div>
+        <div class="timeline-title">Check-in &amp; Art Walk</div>
+        <div class="timeline-desc">Guided walk through the Norton Museum galleries with a welcome drink.</div>
       </div>
-      <div class="program-card fade-in">
-        <span class="program-icon" aria-hidden="true">&#9733;</span>
-        <h3>Art &amp; Culture</h3>
-        <p>Hosted within the Norton Museum of Art, the evening unfolds amidst masterworks, blending Italian creativity with the museum's celebrated collection.</p>
+      <div class="timeline-item fade-in">
+        <div class="timeline-time">7:00 &ndash; 8:00 PM</div>
+        <div class="timeline-title">Exclusive Concert</div>
+        <div class="timeline-desc">A prestigious Italian music soir&eacute;e in collaboration with the Luciano Pavarotti Foundation &mdash; an intimate and refined tribute to the timeless legacy of Maestro Luciano Pavarotti.</div>
       </div>
-      <div class="program-card fade-in">
-        <span class="program-icon" aria-hidden="true">&#10047;</span>
-        <h3>Culinary Excellence</h3>
-        <p>A curated gastronomic experience by BiCE Restaurant &mdash; celebrating 100 years of Italian hospitality &mdash; brings authentic flavors to the heart of Palm Beach.</p>
+      <div class="timeline-item fade-in">
+        <div class="timeline-time">8:00 &ndash; 8:30 PM</div>
+        <div class="timeline-title">Italian Aperitif &amp; Pavarotti Exhibition</div>
+        <div class="timeline-desc">Gourmet food and fine wines, with exclusive access to a rare exhibition of Pavarotti's personal treasures &mdash; including a limited-edition selection of autographed serigraphs available through a silent auction.</div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-time">8:30 PM</div>
+        <div class="timeline-title">Seated Italian Gala Dinner</div>
+        <div class="timeline-desc">An elegant seated dinner with round tables for 10 guests, featuring a bespoke menu crafted by the BiCE Restaurant Group.</div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-time">10:30 PM</div>
+        <div class="timeline-title">Conclusion</div>
+        <div class="timeline-desc">A final toast to close an evening dedicated to the finest expressions of Made in Italy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pavarotti -->
+<section id="pavarotti" style="background: linear-gradient(180deg, #0d0d0d 0%, var(--dark) 100%);">
+  <div class="section-inner">
+    <div class="feature-section fade-in">
+      <div>
+        <p class="section-label">Music &amp; Heritage</p>
+        <h2 class="section-title">Fondazione Luciano Pavarotti</h2>
+        <p class="section-text">
+          A prestigious Italian music soir&eacute;e by Fondazione Luciano Pavarotti &mdash; an exclusive and refined tribute to the timeless legacy of Maestro Luciano Pavarotti, featuring a curated selection of his most iconic and celebrated performances.
+        </p>
+        <br>
+        <p class="section-text">
+          The evening also features a rare exhibition of the Maestro's personal treasures &mdash; including his iconic scarves, signature hats, and legendary stage costumes &mdash; alongside a strictly limited selection of autographed serigraphs, available for acquisition through a silent auction.
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="images/performance.jpg" alt="Live performance" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dining -->
+<section id="dining">
+  <div class="section-inner">
+    <div class="feature-section reversed fade-in">
+      <div>
+        <p class="section-label">Culinary Excellence</p>
+        <h2 class="section-title">BiCE Restaurant Group</h2>
+        <p class="section-text">
+          A symbol of Italian excellence for over a century, the BiCE Restaurant Group represents the highest expression of refined Italian hospitality and gastronomy. Founded in Milan in 1926, the group celebrates its <strong>100-year anniversary</strong> in 2026.
+        </p>
+        <br>
+        <p class="section-text">
+          At the helm stands Raffaele Ruggeri, CEO of the BiCE Restaurant Group and third-generation leader of the family-founded brand. For this exclusive occasion, BiCE will craft a bespoke, high-end Italian menu &mdash; an expression of artistry, creativity, and elegance &mdash; celebrating Italy's finest flavors through a curated and immersive dining journey.
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="images/gala-table.png" alt="Elegant gala table setting" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
 <!-- Pillars -->
-<section id="pillars">
+<section id="pillars" style="background: linear-gradient(180deg, var(--dark) 0%, #0d0d0d 100%);">
   <div class="section-inner" style="text-align: center;">
     <p class="section-label fade-in">Made in Italy</p>
-    <h2 class="section-title fade-in" style="max-width: 600px; margin: 0 auto 1rem;">The Pillars of Italian Identity</h2>
+    <h2 class="section-title fade-in" style="max-width: 600px; margin: 0 auto 1rem;">The Pillars of Italian Excellence</h2>
     <p class="section-text fade-in" style="margin: 0 auto;">
-      Gala Italia showcases the sectors that define Italian excellence on the world stage.
+      Gala Italia showcases the industries that define Italian excellence on the world stage.
     </p>
     <div class="pillars-row">
       <div class="pillar fade-in">
-        <div class="pillar-icon">&#9998;</div>
-        <div class="pillar-label">Design</div>
-      </div>
-      <div class="pillar fade-in">
-        <div class="pillar-icon">&#10022;</div>
-        <div class="pillar-label">Fashion</div>
+        <div class="pillar-icon">&#9875;</div>
+        <div class="pillar-label">Boating</div>
       </div>
       <div class="pillar fade-in">
         <div class="pillar-icon">&#9881;</div>
         <div class="pillar-label">Automotive</div>
       </div>
       <div class="pillar fade-in">
-        <div class="pillar-icon">&#9875;</div>
-        <div class="pillar-label">Nautical</div>
+        <div class="pillar-icon">&#10022;</div>
+        <div class="pillar-label">Fashion &amp; Jewelry</div>
+      </div>
+      <div class="pillar fade-in">
+        <div class="pillar-icon">&#9998;</div>
+        <div class="pillar-label">Design &amp; Hospitality</div>
       </div>
       <div class="pillar fade-in">
         <div class="pillar-icon">&#127860;</div>
-        <div class="pillar-label">Food &amp; Wine</div>
+        <div class="pillar-label">Food &amp; Beverage</div>
       </div>
     </div>
   </div>
@@ -750,33 +878,38 @@
           <p class="section-text">
             One of South Florida's premier cultural institutions, the Norton Museum of Art provides a stunning backdrop for an evening dedicated to the intersection of Italian and international art, culture, and design.
           </p>
+          <br>
+          <p class="section-text">
+            The evening unfolds on the eve of the <strong>Palm Beach International Boat Show</strong>, welcoming Italian yachting brands that will officially open the show on March 25th &mdash; an invitation-only pre-opening soir&eacute;e of rare intimacy and distinction.
+          </p>
         </div>
       </div>
-      <div class="venue-map fade-in">
-        <div class="venue-map-pin">&#128205;</div>
-        <div class="venue-map-label">Palm Beach, Florida</div>
+      <div class="venue-image fade-in">
+        <img src="images/norton-garden.jpeg" alt="Norton Museum of Art garden" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
 <!-- Partners -->
-<section id="partners">
+<section id="partners" style="background: linear-gradient(180deg, var(--dark) 0%, #0d0d0d 100%);">
   <div class="section-inner">
-    <p class="section-label fade-in">Our Partners</p>
-    <h2 class="section-title fade-in" style="max-width: 600px; margin: 0 auto 1rem;">Collaborating for Excellence</h2>
+    <div style="text-align: center;">
+      <p class="section-label fade-in">Our Partners</p>
+      <h2 class="section-title fade-in" style="max-width: 600px; margin: 0 auto 1rem;">Collaborating for Excellence</h2>
+    </div>
     <div class="partners-grid">
       <div class="partner fade-in">
-        <div class="partner-name">Luciano Pavarotti Foundation</div>
-        <div class="partner-desc">Preserving and promoting the legacy of one of the greatest voices in music history.</div>
+        <div class="partner-name">Fondazione Luciano Pavarotti</div>
+        <div class="partner-desc">Preserving and promoting the legacy of one of the greatest voices in music history through exclusive performances and exhibitions.</div>
       </div>
       <div class="partner fade-in">
-        <div class="partner-name">BiCE Restaurant</div>
-        <div class="partner-desc">Celebrating 100 years of authentic Italian hospitality and culinary tradition.</div>
+        <div class="partner-name">BiCE Restaurant Group</div>
+        <div class="partner-desc">Founded in Milan in 1926, celebrating 100 years of authentic Italian hospitality and culinary tradition on the world stage.</div>
       </div>
       <div class="partner fade-in">
         <div class="partner-name">All About Italy</div>
-        <div class="partner-desc">Promoting Italian culture internationally since 1997 through publishing, events, and experiences.</div>
+        <div class="partner-desc">Promoting Italian excellence worldwide since 1997 through international publications, prestigious events, and cultural experiences.</div>
       </div>
     </div>
   </div>
@@ -790,10 +923,10 @@
       <div class="divider-icon">&#10070;</div>
       <div class="divider-line"></div>
     </div>
-    <p class="section-label fade-in">March 24, 2026</p>
+    <p class="section-label fade-in">Tuesday, March 24, 2026</p>
     <h2 class="section-title fade-in">Join Us in Palm Beach</h2>
     <p class="section-text fade-in" style="margin: 0 auto 3rem; text-align: center;">
-      Be part of the historic US debut of Gala Italia. An evening of art, music, cuisine, and the finest expressions of Made in Italy.
+      Be part of the historic US debut of Gala Italia. An evening of art, music, cuisine, and the finest expressions of Made in Italy at the Norton Museum of Art.
     </p>
     <a href="mailto:info@allaboutitaly.net" class="btn btn-filled fade-in">Request an Invitation</a>
   </div>
@@ -803,7 +936,7 @@
 <footer>
   <div class="footer-brand">Gala Italia &mdash; Palm Beach 2026</div>
   <p class="footer-text">
-    Organized by <a href="https://allaboutitaly.net" target="_blank" rel="noopener">All About Italy</a> &bull; Norton Museum of Art, Palm Beach, FL
+    Organized by <a href="https://allaboutitaly.net" target="_blank" rel="noopener">All About Italy</a> &bull; Norton Museum of Art, West Palm Beach, FL
   </p>
 </footer>
 
