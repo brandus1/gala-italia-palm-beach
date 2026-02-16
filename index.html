@@ -299,7 +299,7 @@
 
     .about-image {
       aspect-ratio: 3/4;
-      background: url('images/norton-hallway.jpeg') center center / cover no-repeat;
+      background: url('images/norton-galleria.jpeg') center center / cover no-repeat;
       border: 1px solid rgba(201, 168, 76, 0.15);
       position: relative;
       overflow: hidden;
@@ -640,6 +640,8 @@
       .feature-section,
       .feature-section.reversed { grid-template-columns: 1fr; gap: 2rem; direction: ltr; }
 
+      #invitation .section-inner > div:last-child { grid-template-columns: 1fr !important; }
+
       .photo-strip { grid-template-columns: 1fr; }
 
       .hero-details { gap: 2rem; }
@@ -679,7 +681,7 @@
 <div class="flag-bar"></div>
 
 <nav>
-  <div class="nav-logo">Gala Italia</div>
+  <div class="nav-logo">Gala Italia Palm Beach 2026</div>
   <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
@@ -689,6 +691,7 @@
     <li><a href="#pavarotti">Pavarotti</a></li>
     <li><a href="#dining">Dining</a></li>
     <li><a href="#venue">Venue</a></li>
+    <li><a href="#allaboutitaly">All About Italy</a></li>
   </ul>
 </nav>
 
@@ -731,7 +734,7 @@
         </p>
         <br>
         <p class="section-text">
-          The Gala Italia offers a full-immersion experience that blends the elegance of Italian tradition with the contemporary energy of the industries that best represent Italy &mdash; hosted in a unique and prestigious setting: the <strong>Norton Museum of Art</strong> in Palm Beach, on the eve of the official opening of the <strong>Palm Beach International Boat Show</strong>.
+          The Gala Italia offers a full-immersion experience that blends the elegance of Italian tradition with the contemporary energy of the industries that best represent Italy &mdash; hosted in a unique and prestigious setting: the <strong>Norton Museum of Art</strong> in Palm Beach, the night before the official opening of the <strong>Palm Beach International Boat Show</strong>.
         </p>
       </div>
       <div class="about-image fade-in"></div>
@@ -752,6 +755,22 @@
   </div>
 </div>
 
+<!-- Invitation & Program -->
+<section id="invitation" style="background: linear-gradient(180deg, var(--dark) 0%, #0d0d0d 100%);">
+  <div class="section-inner" style="text-align: center;">
+    <p class="section-label fade-in">The Invitation</p>
+    <h2 class="section-title fade-in" style="max-width: 700px; margin: 0 auto 3rem;">Save the Date &amp; Evening Program</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1000px; margin: 0 auto;">
+      <div class="fade-in" style="border: 1px solid rgba(201, 168, 76, 0.15); overflow: hidden;">
+        <img src="images/invitation-savethedate.jpg" alt="Gala Italia — Save the Date" style="width: 100%; height: auto; display: block;" loading="lazy">
+      </div>
+      <div class="fade-in" style="border: 1px solid rgba(201, 168, 76, 0.15); overflow: hidden;">
+        <img src="images/invitation-program.jpg" alt="Gala Italia — Evening Program" style="width: 100%; height: auto; display: block;" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Program -->
 <section id="program">
   <div class="section-inner">
@@ -761,22 +780,22 @@
       <div class="timeline-item fade-in">
         <div class="timeline-time">6:00 PM</div>
         <div class="timeline-title">Check-in &amp; Art Walk</div>
-        <div class="timeline-desc">Guided walk through the Norton Museum galleries with a welcome drink.</div>
+        <div class="timeline-desc">Check-in &amp; Art Walk through the Norton Museum galleries &mdash; Welcome Drink.</div>
       </div>
       <div class="timeline-item fade-in">
         <div class="timeline-time">7:00 &ndash; 8:00 PM</div>
         <div class="timeline-title">Exclusive Concert</div>
-        <div class="timeline-desc">A prestigious Italian music soir&eacute;e in collaboration with the Luciano Pavarotti Foundation &mdash; an intimate and refined tribute to the timeless legacy of Maestro Luciano Pavarotti.</div>
+        <div class="timeline-desc">Exclusive concert in collaboration with the Luciano Pavarotti Foundation.</div>
       </div>
       <div class="timeline-item fade-in">
         <div class="timeline-time">8:00 &ndash; 8:30 PM</div>
-        <div class="timeline-title">Italian Aperitif &amp; Pavarotti Exhibition</div>
-        <div class="timeline-desc">Gourmet food and fine wines, with exclusive access to a rare exhibition of Pavarotti's personal treasures &mdash; including a limited-edition selection of autographed serigraphs available through a silent auction.</div>
+        <div class="timeline-title">Italian Aperitif &amp; Silent Auction of Maestro Pavarotti&rsquo;s Personal Treasures</div>
+        <div class="timeline-desc">Italian aperitif featuring gourmet food and fine wines, with exclusive access to a rare exhibition of Pavarotti&rsquo;s personal treasures, including limited-edition autographed serigraphs available through a silent auction.</div>
       </div>
       <div class="timeline-item fade-in">
         <div class="timeline-time">8:30 PM</div>
-        <div class="timeline-title">Seated Italian Gala Dinner</div>
-        <div class="timeline-desc">An elegant seated dinner with round tables for 10 guests, featuring a bespoke menu crafted by the BiCE Restaurant Group.</div>
+        <div class="timeline-title">Seated Italian Gala Dinner by BiCE Ristorante</div>
+        <div class="timeline-desc">Seated Italian gala dinner with elegant round tables for 10 guests.</div>
       </div>
       <div class="timeline-item fade-in">
         <div class="timeline-time">10:30 PM</div>
@@ -803,7 +822,7 @@
         </p>
       </div>
       <div class="feature-image">
-        <img src="images/performance.jpg" alt="Live performance" loading="lazy">
+        <img src="images/pavarotti-hat.jpg" alt="Maestro Luciano Pavarotti" loading="lazy">
       </div>
     </div>
   </div>
@@ -815,17 +834,26 @@
     <div class="feature-section reversed fade-in">
       <div>
         <p class="section-label">Culinary Excellence</p>
-        <h2 class="section-title">BiCE Restaurant Group</h2>
+        <h2 class="section-title">The Refined Culinary Experience of BiCE Restaurant Group</h2>
         <p class="section-text">
-          A symbol of Italian excellence for over a century, the BiCE Restaurant Group represents the highest expression of refined Italian hospitality and gastronomy. Founded in Milan in 1926, the group celebrates its <strong>100-year anniversary</strong> in 2026.
+          A symbol of Italian excellence for over a century, the BiCE Restaurant Group represents the highest expression of refined Italian hospitality and gastronomy. Founded in Milan in 1926, the group celebrates its <strong>100-year anniversary</strong> in 2026, honoring a legacy that began with the opening of the first BiCE Ristorante by Raffaele Ruggeri&rsquo;s grandmother, a visionary whose passion laid the foundation for an enduring culinary institution.
         </p>
         <br>
         <p class="section-text">
-          At the helm stands Raffaele Ruggeri, CEO of the BiCE Restaurant Group and third-generation leader of the family-founded brand. For this exclusive occasion, BiCE will craft a bespoke, high-end Italian menu &mdash; an expression of artistry, creativity, and elegance &mdash; celebrating Italy's finest flavors through a curated and immersive dining journey.
+          Rooted in tradition, the BiCE Restaurant Group has become synonymous with timeless elegance, artisanal craftsmanship, and authentic Italian cuisine &mdash; values that continue to define its presence on the global culinary stage.
+        </p>
+        <br>
+        <p class="section-text">
+          For Gala Italia, Salute Ristorante and BiCE Ristorante will present an evening of elevated gastronomic excellence in Palm Beach. The menu will be a bespoke celebration of Italian cuisine &mdash; deeply rooted in heritage, artfully refined, and crafted with uncompromising attention to quality and authenticity.
         </p>
       </div>
-      <div class="feature-image">
-        <img src="images/gala-table.png" alt="Elegant gala table setting" loading="lazy">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; aspect-ratio: auto;">
+        <div style="overflow: hidden; border: 1px solid rgba(201, 168, 76, 0.12);">
+          <img src="images/raffaele-ruggeri.png" alt="Raffaele Ruggeri, CEO of BiCE Restaurant Group" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+        </div>
+        <div style="overflow: hidden; border: 1px solid rgba(201, 168, 76, 0.12); background: #fff; display: flex; align-items: center; justify-content: center;">
+          <img src="images/bice-logos.png" alt="BiCE Ristorante and Salute Ristorante" style="max-width: 100%; max-height: 100%; object-fit: contain;" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
@@ -877,16 +905,16 @@
             West Palm Beach, FL 33401
           </address>
           <p class="section-text">
-            One of South Florida's premier cultural institutions, the Norton Museum of Art provides a stunning backdrop for an evening dedicated to the intersection of Italian and international art, culture, and design.
+            Palm Beach was chosen for its unparalleled profile: it stands among the most exclusive and affluent communities in the United States. Renowned for its private clubs, charity galas, and prestigious auctions, Palm Beach thrives during its vibrant winter social season, attracting the international elite.
           </p>
           <br>
           <p class="section-text">
-            The evening unfolds on the eve of the <strong>Palm Beach International Boat Show</strong>, welcoming Italian yachting brands that will officially open the show on March 25th &mdash; an invitation-only pre-opening soir&eacute;e of rare intimacy and distinction.
+            This privileged setting provides the perfect stage on the eve of the <strong>Palm Beach International Boat Show</strong>, one of America&rsquo;s premier luxury yachting events. Gala Italia extends a warm welcome to the Italian yachting brands that will officially open the show on March 25th &mdash; celebrating the excellence of Made in Italy on the international stage.
           </p>
         </div>
       </div>
       <div class="venue-image fade-in">
-        <img src="images/norton-garden.jpeg" alt="Norton Museum of Art garden" loading="lazy">
+        <img src="images/norton-frontale.jpeg" alt="Norton Museum of Art — Entrance" loading="lazy">
       </div>
     </div>
   </div>
@@ -916,6 +944,36 @@
   </div>
 </section>
 
+<!-- All About Italy -->
+<section id="allaboutitaly" style="background: linear-gradient(180deg, #0d0d0d 0%, var(--dark) 100%);">
+  <div class="section-inner">
+    <div class="feature-section fade-in">
+      <div>
+        <p class="section-label">The Organizer</p>
+        <h2 class="section-title">All About Italy</h2>
+        <p class="section-text">
+          Since 1997, All About Italy has been promoting Italian excellence worldwide, sharing authentic content through a strong editorial presence in the USA and Germany. The international platform highlights Italy&rsquo;s excellence in culture, industry, and innovation.
+        </p>
+        <br>
+        <p class="section-text">
+          All About Italy has grown into a multichannel network that combines high-quality content with strategic distribution across the key sectors of Made in Italy &mdash; lifestyle, food &amp; wine, fashion, tourism, design, automotive, yachting, and culture.
+        </p>
+        <br>
+        <p class="section-text">
+          With an experiential and relationship-driven editorial approach, All About Italy creates synergy between brands, institutions, artists, and entrepreneurs, serving as a cultural and commercial bridge between Italy, the United States, and Germany.
+        </p>
+        <br>
+        <p style="margin-top: 1.5rem;">
+          <a href="https://www.allaboutitaly.net" target="_blank" rel="noopener" class="btn">All About Italy Digital Copy</a>
+        </p>
+      </div>
+      <div class="feature-image" style="aspect-ratio: auto;">
+        <img src="images/aai-magazine.jpg" alt="All About Italy Magazine" style="width: 100%; height: auto;" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section">
   <div class="section-inner">
@@ -929,7 +987,7 @@
     <p class="section-text fade-in" style="margin: 0 auto 3rem; text-align: center;">
       Be part of the historic US debut of Gala Italia. An evening of art, music, cuisine, and the finest expressions of Made in Italy at the Norton Museum of Art.
     </p>
-    <a href="mailto:info@allaboutitaly.net" class="btn btn-filled fade-in">Request an Invitation</a>
+    <a href="mailto:s.gazzaniga@allaboutitaly.net" class="btn btn-filled fade-in">Request an Invitation</a>
   </div>
 </section>
 
